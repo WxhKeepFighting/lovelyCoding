@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="fileCarFinder" class="bean.injection.cars.FileCarFinder"/>
+    <bean id="memCarFinder" class="bean.injection.cars.MemCarFinder"/>
+    <bean id="carListener" class="bean.injection.cars.CarListener">
+        <constructor-arg ref="memCarFinder"/>
+    </bean>
+</beans>
